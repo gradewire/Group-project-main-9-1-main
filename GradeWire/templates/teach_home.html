@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/teach-style.css'%}">
+</head>
+<body>
+        <div class="menu-toggle" onclick="toggleSidebar()">☰ Menu</div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+
+            <h2>Teacher Dashboard</h2>
+            
+            <a href="{% url 'teachHome' %}" >Home</a>
+            <a href="{% url 'teacherProfile' %}" >Profile</a>
+            <a href="{% url 'teachStAttendance' %}" >Attendance</a>
+            <a href="{% url 'teachStMarks' %}" >Marks</a>
+            <a href="{% url 'teachStStats' %}">Stats</a>
+            <a href="{% url 'StudentDetail' %}" >Students</a>
+            <!-- Logout option at the very bottom (only for Desktop) -->
+            <a href="javascript:void(0);" class="logout">Logout</a>
+           
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+           <!-- Home Section -->
+<div id="home" class="section active">
+    <h2>Welcome to Your Dashboard</h2>
+    <p>This is your teacher dashboard where you can manage attendance, marks, and view students. Use the navigation on the left to access different sections.</p>
+    
+    <div class="home-summary">
+        <div class="summary-box">
+            <h3>Total Students</h3>
+            <p>50</p>
+        </div>
+        <div class="summary-box">
+            <h3>Attendance Today</h3>
+            <p>40/50</p>
+        </div>
+        <div class="summary-box">
+            <h3>Recent Marks Updated</h3>
+            <p>5 Marks Updates Today</p>
+        </div>
+        <div class="summary-box">
+            <h3>Upcoming Events</h3>
+            <p>Next Exam: 15th Jan</p>
+        </div>
+    </div>
+
+</div>
+
+    </div>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
